@@ -17,15 +17,21 @@ body {
   flex-direction: column;
   padding: 1.25rem;
   align-items: center;
+  border-style: dashed;
+  border-color: darkblue;
+  border-width: 1px;
+  border-radius: 1rem;
+  background-color: pink;
 }
 
 .display {
   width: 95%;
   height: 3rem;
-  font-size: 1.6rem;
+  font-size: 1.9rem;
   text-align: right;
   border-style: solid;
   border-color: lightsteelblue;
+  border-radius: 0.5rem;
 }
 
 ul {

@@ -12,7 +12,13 @@ const Calculator = () => {
   const calcKeyClicked = calcKey => {
     console.log('Button clicked value: ', calcKey)
     if (displayValue == 0 && calcKey >= '0' && calcKey <= '9') {
-      setDisplayValue = calcKey
+      setDisplayValue(calcKey)
+      // setDisplayValue(prevValue => {
+      //   return calcKey
+    } else {
+      setDisplayValue(prevValue => {
+        return prevValue + calcKey
+      })
     }
   }
   return (
@@ -24,20 +30,22 @@ const Calculator = () => {
         }
       />
 
-      <main className="mainSection">
-        <Display key={'1'} displayValue={displayValue} />
-        <section className="keyPadSection">
-          <ul>
-            {calcKeys.map((calcKey, index) => {
-              return (
-                <CalcKeyLi
-                  key={index}
-                  calcKey={calcKey}
-                  calcKeyClicked={calcKeyClicked}
-                />
-              )
-            })}
-          </ul>
+      <main>
+        <section className="mainSection">
+          <Display key={'1'} displayValue={displayValue} />
+          <section className="keyPadSection">
+            <ul>
+              {calcKeys.map((calcKey, index) => {
+                return (
+                  <CalcKeyLi
+                    key={index}
+                    calcKey={calcKey}
+                    calcKeyClicked={calcKeyClicked}
+                  />
+                )
+              })}
+            </ul>
+          </section>
         </section>
       </main>
     </>
