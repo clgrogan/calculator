@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import KeyboardEventHandler from 'react-keyboard-event-handler'
 import CalcKeyLi from '../components/CalcKeyLi.jsx'
+import Display from '../components/Display.jsx'
 
 const Calculator = () => {
   const calcKeys = 'C () % / 1 8 9 x 4 5 6 - 1 2 3 + +/- 0 . ='.split(' ')
@@ -24,7 +25,7 @@ const Calculator = () => {
       />
 
       <main className="mainSection">
-        <p className="display">{displayValue}</p>
+        <Display key={'1'} displayValue={displayValue} />
         <section className="keyPadSection">
           <ul>
             {calcKeys.map((calcKey, index) => {
