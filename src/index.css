@@ -34,6 +34,10 @@ body {
   border-radius: 0.5rem;
 }
 
+.keyPadSection {
+  width: 95%;
+}
+
 ul {
   list-style: none;
   display: flex;
